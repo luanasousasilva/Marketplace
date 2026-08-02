@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: marketplace-api
+  datasource:
+    url: jdbc:h2:mem:marketplace;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+  jackson:
+    default-property-inclusion: non_null
+server:
+  error:
+    include-message: never

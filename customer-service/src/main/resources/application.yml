@@ -1,0 +1,7 @@
+server: { port: 8081 }
+spring:
+  application: { name: customer-service }
+  datasource: { url: jdbc:postgresql://localhost:5432/marketplace, username: marketplace, password: marketplace }
+  jpa: { hibernate: { ddl-auto: update }, properties: { hibernate.default_schema: customer } }
+  data: { redis: { host: localhost, port: 6379 } }
+  session: { store-type: redis }

@@ -1,0 +1,7 @@
+server: { port: 8085 }
+spring:
+  application: { name: notification-service }
+  datasource: { url: jdbc:postgresql://localhost:5432/marketplace, username: marketplace, password: marketplace }
+  jpa: { hibernate: { ddl-auto: update }, properties: { hibernate.default_schema: notifications } }
+  data: { mongodb: { uri: mongodb://localhost:27017/marketplace_notifications }, redis: { host: localhost, port: 6379 } }
+  session: { store-type: redis }
