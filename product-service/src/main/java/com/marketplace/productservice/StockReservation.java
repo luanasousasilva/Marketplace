@@ -1,0 +1,3 @@
+package com.marketplace.productservice;
+import jakarta.persistence.*; import java.time.Instant;
+@Entity @Table(name="stock_reservations",uniqueConstraints=@UniqueConstraint(columnNames="idempotencyKey")) class StockReservation { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) Long id; @Column(nullable=false,unique=true,updatable=false) String idempotencyKey; @Column(nullable=false) Long productId; @Column(nullable=false) int quantity; @Column(nullable=false) Instant createdAt=Instant.now(); protected StockReservation(){} StockReservation(String key,Long productId,int quantity){this.idempotencyKey=key;this.productId=productId;this.quantity=quantity;} }
